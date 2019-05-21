@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hikigayahachima.github.io/"/>
-  <updated>2019-05-21T05:42:49.469Z</updated>
+  <updated>2019-05-20T12:28:16.092Z</updated>
   <id>https://hikigayahachima.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://hikigayahachima.github.io/2019/05/21/hello-world/"/>
-    <id>https://hikigayahachima.github.io/2019/05/21/hello-world/</id>
-    <published>2019-05-21T05:42:49.469Z</published>
-    <updated>2019-05-21T05:42:49.469Z</updated>
+    <title>五子棋--AI篇</title>
+    <link href="https://hikigayahachima.github.io/2019/05/20/%E4%BA%94%E5%AD%90%E6%A3%8B-AI%E7%AF%87/"/>
+    <id>https://hikigayahachima.github.io/2019/05/20/五子棋-AI篇/</id>
+    <published>2019-05-20T06:00:32.000Z</published>
+    <updated>2019-05-20T12:28:16.092Z</updated>
     
     <summary type="html">
     
@@ -29,386 +29,38 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="(╯‵□′)╯︵┻━┻" scheme="https://hikigayahachima.github.io/tags/%E2%95%AF%E2%80%B5%E2%96%A1%E2%80%B2-%E2%95%AF%EF%B8%B5%E2%94%BB%E2%94%81%E2%94%BB/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(10)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (10)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
+    <title>五子棋--UI篇</title>
+    <link href="https://hikigayahachima.github.io/2019/05/20/%E4%BA%94%E5%AD%90%E6%A3%8B-UI%E7%AF%87/"/>
+    <id>https://hikigayahachima.github.io/2019/05/20/五子棋-UI篇/</id>
+    <published>2019-05-20T06:00:03.000Z</published>
+    <updated>2019-05-20T12:27:02.811Z</updated>
     
     <summary type="html">
     
-      hexo-sakura主题使用教程
+      
+      
+        
+        
+          &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
+        
+      
     
     </summary>
     
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(14)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (14)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(12)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (12)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(13)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (13)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(15)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (15)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(16)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (16)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(3)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (3)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(11)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (11)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(5)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (5)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(4)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (4)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(6)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (6)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(9)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (9)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(7)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (7)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(8)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (8)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura%20-%20%E5%89%AF%E6%9C%AC%20(2)/"/>
-    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura - 副本 (2)/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-05-16T14:39:12.000Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
+      <category term="♪(^∇^*)" scheme="https://hikigayahachima.github.io/tags/%E2%99%AA-%E2%88%87/"/>
     
   </entry>
   

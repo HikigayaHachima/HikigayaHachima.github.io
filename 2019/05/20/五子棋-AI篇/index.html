@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">五子棋--AI篇 | 比起谷八幡</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "Hachiman_(:з)∠)_";
+  mashiro_option.author_name = "_(:з)∠)_";
+  mashiro_option.site_url = "https://sakura.hojun.cn";
+  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(1).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(2).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(3).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(4).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(5).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(6).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(7).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(8).jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://sakura.hojun.cn">
+          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://hikigayahachima.github.io" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://2480843339@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style>
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name src width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">Hachiman</span>
+            <span class="shironeko">_(:з)∠)_</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/图集/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/client/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+                    客户端
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">五子棋--AI篇</h1>
+            <p class="entry-census">&nbsp;·&nbsp;2019-5-20&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p><p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>AI篇写的真的是让人头秃，虽然我觉得工作用不上三维数组，根本没怎么练习过，导致AI篇的算法写的人头皮发麻，基本全卡在算法上，真正的逻辑却没有多少，总之还是介绍一下吧</p>
+<h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><p>注意：本片是基于UI篇的后续开发，所以请务必观看UI篇后再来看此篇</p>
+<ul>
+<li>赢法数组<br>用一个三维的数组记录五子棋的所有赢法。</li>
+<li>每种赢法的统计数组<br>我们用一维数组来记录每种赢法</li>
+<li>如何判断输赢<br>判断输赢的方法</li>
+<li>实现计算机落子<br>这部分是重点，算法设计精准，计算机的棋艺就高</li>
+</ul>
+<h1 id="内容区"><a href="#内容区" class="headerlink" title="内容区"></a>内容区</h1><h3 id="赢法数组"><a href="#赢法数组" class="headerlink" title="赢法数组"></a>赢法数组</h3><p>首先定义一个三维的数组，用于存放所有赢的情况。 </p>
+<pre><code class="javascript">    //赢法数组 
+    var wins = [];
+    for(var i=0; i&lt;15; i++){
+        wins[i] = [];
+        for(var j=0; j&lt;15; j++){
+            wins[i][j] = [];
+        }
+    }
+</code></pre>
+<p>定义<code>count</code>用于记录赢的方法种类数量，然后再遍历所有赢的情况，包括横向、纵向、斜向、反斜向，下面以横向为例讲解。 </p>
+<pre><code class="javascript">    //统计所有可能的赢法
+    var count = 0;
+    //横线
+    for(var i = 0; i &lt; 15; i++){
+        for(var j= 0; j &lt; 11; j++){
+            for(var k = 0; k &lt; 5; k++){
+                wins[i][j+k][count] = true;
+            }
+            count++;
+        }
+    }
+</code></pre>
+<p>这是五个棋子呈横的形式赢的情况。 这里有三个循环，第一个循环是指每一条横线。第二个循环指的是摆成五个子，第一个子的纵坐标。第三个循环是摆满五个棋子，里重点说说为什么<code>j&lt;11</code>。如果你想更好地理解，可以代些数进去看一下是什么情况。 如果<code>j=10</code>时，赢的情况是如下图： </p>
+<p><img src="https://i.loli.net/2019/05/20/5ce29af4ba0dc81778.png" alt="1.png"></p>
+<p>如果j还比10大的话就会超出棋盘。 以此类推，纵向、斜向、反斜向也是同理： </p>
+<pre><code class="javascript">    //统计所有可能的赢法
+    var count = 0;
+    //横线
+    for(var i = 0; i &lt; 15; i++){
+        for(var j= 0; j &lt; 11; j++){
+            for(var k = 0; k &lt; 5; k++){
+                wins[i][j+k][count] = true;
+            }
+            count++;
+        }
+    }
+    //竖线
+    for(var i = 0; i &lt; 15; i++){
+        for(var j= 0; j &lt; 11; j++){
+            for(var k = 0; k &lt; 5; k++){
+                wins[j+k][i][count] = true;
+            }
+            count++;
+        }
+    }
+    //正斜
+    for(var i = 0; i &lt; 11; i++){
+        for(var j= 0; j &lt; 11; j++){
+            for(var k = 0; k &lt; 5; k++){
+                wins[i+k][j+k][count] = true;
+            }
+            count++;
+        }
+    }
+    //反斜
+    for(var i = 0; i &lt; 11; i++){
+        for(var j= 14; j &gt; 3; j--){
+            for(var k = 0; k &lt; 5; k++){
+                wins[i+k][j-k][count] = true;
+            }
+            count++;
+        }
+    }
+    //console.log(count) 15*15的棋盘中有572中赢法
+</code></pre>
+<p>最后在后台输出总共有多少种赢法。我们由此知道，<code>15*15</code>的棋盘总共有572种赢法，所有赢法计算机都知道了，所以，如果代码打得好，你根本无法赢机器。 </p>
+<h3 id="赢法的统计数组"><a href="#赢法的统计数组" class="headerlink" title="赢法的统计数组"></a>赢法的统计数组</h3><p>这是一个一维的数组，用来计算某种赢法是否达成。上面列举了所有的赢法，那在某赢法中成功落下一个棋子，那我们就为该种赢法的值加1，直到加5就实现了此种赢法，实现结束游戏。那如果该赢法中有另一方的棋子，此种赢法报废。大概就是这么一个思路。计算机落子的目的就是去破坏你某种赢法的可行性，所以计算机落子的风格跟人有很大的区别。<br> 定义并实例化两个数组，一个用来存放玩家赢法的数组，另一个用来存放电脑赢法的数组。<br> 还定义了一个<code>over变量</code>，标志游戏是否结束。</p>
+<pre><code class="javascript">      //判断结束游戏
+    var over = false;
+
+    //输赢统计数组
+    var my_win = [];
+    var computer_win = [];
+    //用来统计有多少个子连成一线
+    for (let i = 0; i &lt; count; i++) {
+        my_win[i] = 0;
+        computer_win[i] = 0;
+    }
+</code></pre>
+<p>在单击事件，成功落子后进行一个循环。 这个循环遍历所有的赢法，如果某种赢法里有棋子，就<code>my_win[k]++</code>，如果<code>my_win[k] == 5</code>成立了，改变<code>over</code>的标志，就代表你赢了 </p>
+<pre><code class="javascript">canvas.onclick = function (e){
+    if(over){//判断游戏是否结束
+        return ;
+    }
+    var x = e.offsetX ;
+    var y = e.offsetY ;
+    var i = Math.floor(x/30) ;
+    var j = Math.floor(y/30) ;
+    if(canvasBoard[i][j] == 0){        //为0时，证明这个位置是空的，是可以落子的
+        on(i,j,me);
+        if(me == true){
+            canvasBoard[i][j] = 1 ;    //用1来表示我的落子
+        }else{
+            canvasBoard[i][j] = 2 ;    //用2来表示电脑的落子
+        }
+        me = false ;  
+        //落下子后需要进行统计
+        for(var k=0; k&lt;count; k++){
+            if(wins[i][j][k]){            //如果我当前落子符合某个赢法
+                my_win[k]++;                //离胜利又进一步
+                computer_win[k] = 6 ;      //该种赢法计算机没有机会了
+                if(my_win[k] == 5){         //如果达到5就赢了
+                    window.alert(&quot;you win!!&quot;);
+                    over = true ;        //游戏结束
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<p>测试，如下图所示，如果你下够五个子，就弹窗提示你赢了，这里有点不好，就是你要点击确认，第五个棋子才出来，后面会进行优化。 </p>
+<p><img src="https://i.loli.net/2019/05/20/5ce29af45f73b73371.png" alt="2.png"></p>
+<h3 id="计算机判断有效落棋点"><a href="#计算机判断有效落棋点" class="headerlink" title="计算机判断有效落棋点"></a>计算机判断有效落棋点</h3><p>在完成落子统计后判断是否结束游戏，如果没结束，就轮到计算机下棋，计算棋下棋调用<code>computerAI()</code>方法。 </p>
+<pre><code class="javascript">if(over == false){
+    me = false ;  //如果游戏没结束，下棋权利交给计算机
+    computerAI();//计算机AI
+}
+</code></pre>
+<p>在点击鼠标的时候需要判断是否轮到人落棋： </p>
+<pre><code class="javascript"> if(me == false){  //如果为false时，还没轮到我下棋，return个空气出去，让我动不了
+     return;
+ }
+</code></pre>
+<p>更改落棋的判断，如果鼠标点击，只下黑棋，并且只改变黑棋的频数统计。 </p>
+<pre><code class="javascript">    if(canvasBoard[i][j] == 0){        //当前区域没有子
+        on(i,j,me);                    //先落子
+        canvasBoard[i][j] = 1 ;        //在标注1证明是我的子
+        //落下子后需要进行统计
+        for(var k=0; k&lt;count; k++){
+            if(wins[i][j][k]){            //某种赢的某子true
+                my_win[k]++;            //离胜利又进一步
+                computer_win[k] = 6 ;    //该种赢法计算机没有机会了
+                if(my_win[k] == 5){        //如果达到5就赢了
+                    window.alert(&quot;厉害，你赢了！！&quot;);
+                    over = true ;
+                }
+            }
+        }
+        if(over == false){
+            me = false ;  //如果游戏没结束，下棋权利交给计算机
+            computerAI();//计算机AI
+        }
+    }
+</code></pre>
+<p>接下来实现<code>computerAI()</code>方法的棋步权值，这是整篇的难点，先上代码：</p>
+<pre><code class="javascript">    var computerAI = function(){
+        //积分设定
+        var myScroe = [];
+        var computerScore = [];
+        //落子的优先判定
+        var max = 0;
+        //电脑的落子坐标
+        var u = 0,v = 0;
+        //获得所有的格子,每个格子都有myScroe和computerScore且都为0用来给落子打分
+        for (let i = 0; i &lt; 15; i++) {
+            myScroe[i] = [];
+            computerScore[i] = [];
+            for (let j = 0; j &lt; 15; j++) {
+                myScroe[i][j] = 0;
+                computerScore[i][j] = 0;
+            }
+        }
+        //先获得每一个格子
+        for (let i = 0; i &lt; 15; i++){
+            for (let j = 0; j &lt; 15; j++){
+                //和人下棋一样,落子前得判定canvasBoard[i][j]为0,也就是没有任何棋子
+                if(canvasBoard[i][j] == 0){
+                    //遍历全部的赢法
+                    for (let k = 0; k &lt; count; k++){
+                        //如果当前的wins[i][j][k]存在,并且有子的时候
+                        if (wins[i][j][k]){
+                            //接下来就是具体给每个落子打分
+                            //每存在一种情况，就给myScroe[i][j]加上对应的分数
+                            if (my_win[k] == 1){
+                                myScroe[i][j] += 200;
+                            }
+                            else if(my_win[k] == 2){
+                                myScroe[i][j] += 400;
+                            }
+                            else if(my_win[k] == 3){
+                                myScroe[i][j] += 2000;
+                            }
+                            else if(my_win[k] == 4){
+                                myScroe[i][j] += 10000;
+                            }
+
+                            //这里是给电脑落子打分，同上
+                            if (computer_win[k] == 1){
+                                computerScore[i][j] += 300;
+                            }
+                            else if(computer_win[k] == 2){
+                                computerScore[i][j] += 600;
+                            }
+                            else if(computer_win[k] == 3){
+                                computerScore[i][j] += 4000;
+                            }
+                            else if(computer_win[k] == 4){
+                                computerScore[i][j] += 20000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</code></pre>
+<p>看到这些括号是不是头都大了，哈哈，其实逻辑不是很难，只要是算法有点烦。</p>
+<p>如上代码，首先定义并实例化<code>myScore[]</code>与<code>computerScore[]</code>两个数组，用于存放各个棋点的落子价值，再分别遍历人和计算机的所有赢法，如果有1、2、3、4子，分别为棋点附权值。 </p>
+<h3 id="实现计算机落子"><a href="#实现计算机落子" class="headerlink" title="实现计算机落子"></a>实现计算机落子</h3><p>接下来我们找到计算机落子的最佳坐标，然后在这个坐标上落子，就实现了计算机落子的功能了，在这里把整个<code>computerAI()</code>函数贴出来再进行讲解： </p>
+<pre><code class="javascript">    var computerAI = function(){
+        //积分设定
+        var myScroe = [];
+        var computerScore = [];
+        //落子的优先判定
+        var max = 0;
+        //电脑的落子坐标
+        var u = 0,v = 0;
+        //获得所有的格子,每个格子都有myScroe和computerScore且都为0用来给落子打分
+        for (let i = 0; i &lt; 15; i++) {
+            myScroe[i] = [];
+            computerScore[i] = [];
+            for (let j = 0; j &lt; 15; j++) {
+                myScroe[i][j] = 0;
+                computerScore[i][j] = 0;
+            }
+        }
+        //先获得每一个格子
+        for (let i = 0; i &lt; 15; i++){
+            for (let j = 0; j &lt; 15; j++){
+                //和人下棋一样,落子前得判定canvasBoard[i][j]为0,也就是没有任何棋子
+                if(canvasBoard[i][j] == 0){
+                    //遍历全部的赢法
+                    for (let k = 0; k &lt; count; k++){
+                        //如果当前的wins[i][j][k]存在,并且有子的时候
+                        if (wins[i][j][k]){
+                            //接下来就是具体给每个落子打分
+                            if (my_win[k] == 1){
+                                myScroe[i][j] += 200;
+                            }
+                            else if(my_win[k] == 2){
+                                myScroe[i][j] += 400;
+                            }
+                            else if(my_win[k] == 3){
+                                myScroe[i][j] += 2000;
+                            }
+                            else if(my_win[k] == 4){
+                                myScroe[i][j] += 10000;
+                            }
+
+                            //这里是给电脑落子打分
+                            if (computer_win[k] == 1){
+                                computerScore[i][j] += 300;
+                            }
+                            else if(computer_win[k] == 2){
+                                computerScore[i][j] += 600;
+                            }
+                            else if(computer_win[k] == 3){
+                                computerScore[i][j] += 4000;
+                            }
+                            else if(computer_win[k] == 4){
+                                computerScore[i][j] += 20000;
+                            }
+                        }    
+                    }
+                    //这段时用来判断落子的最佳处
+                    //人在某一部权值更高的情况
+                    if(myScroe[i][j] &gt; max){
+                        max = myScroe[i][j];
+                        u = i;
+                        v = j;
+                    }
+                    //权值已经到了最大的时候
+                    else if(myScroe[i][j] == max){
+                        //而i,j点的权值比在u,v点的更大时
+                        if(computerScore[i][j] &gt; computerScore[u][v]){
+                            u = i;
+                            v = j;
+                        }
+                    }
+                    //电脑在某一步权值更高时
+                    else if(computerScore[i][j] &gt; max){
+                        max = computerScore[i][j];
+                        u = i;
+                        v = j;
+                    }
+                    //当权值最大的时候
+                    else if(computerScore[i][j] == max){
+                        //如果人电脑在此处落子更有用
+                        if(myScroe[i][j] &gt; myScroe[u][v]){
+                            u = i;
+                            v = j;
+                        }
+                    }
+                }
+            }
+        }
+        //当判断出最佳的落子点后,电脑开始落子,并且给落子点标记个2证明时白子
+        on(u,v,me);
+        canvasBoard[u][v] = 2;
+
+        //这里判断是否有五个子连成一线,和上面的判断大致一样
+        var b = setTimeout(() =&gt; {
+            for (let k = 0; k &lt; count; k++) {
+                if(wins[u][v][k]){
+                    computer_win[k]++;
+                    my_win[k] = 6;
+                    if (computer_win[k] == 5) {
+                        on(u,v,me);
+                        over = true
+                        var a = setTimeout(() =&gt; {
+                            window.alert(&quot;you lose!!&quot;)
+                            clearTimeout(a);
+                        }, 30);
+                    }
+                }
+            }
+            if(over == false){
+                me = true;
+            }
+            clearTimeout(b);
+        }, 10);
+    }
+</code></pre>
+<p>上面函数的代码比较长，其实很多一部分都是与上面有重复的。<br>为了找到棋盘坐标最高权值和其坐标点，这里定义三个变量<code>max</code>、<code>u</code>和<code>v</code> 。通过上遍历所有赢法的值后，这里只要判断比较在哪一方的赢法中落子价值大，主要是自己向着赢的方向前进和不让对方赢的方向进行阻挡。<br>如下面是比较的权值的代码，通过以下代码得到（u,v）这个权值最大的坐标：</p>
+<pre><code class="javascript">    //这段时用来判断落子的最佳处
+    //人在某一部权值更高的情况
+    if(myScroe[i][j] &gt; max){
+        max = myScroe[i][j];
+        u = i;
+        v = j;
+    }
+    //权值已经到了最大的时候
+    else if(myScroe[i][j] == max){
+        //而i,j点的权值比在u,v点的更大时
+        if(computerScore[i][j] &gt; computerScore[u][v]){
+            u = i;
+            v = j;
+        }
+    }
+    //电脑在某一步权值更高时
+    else if(computerScore[i][j] &gt; max){
+        max = computerScore[i][j];
+        u = i;
+        v = j;
+    }
+    //当权值最大的时候
+    else if(computerScore[i][j] == max){
+        //要是电脑在此处落子更有用
+        if(myScroe[i][j] &gt; myScroe[u][v]){
+            u = i;
+            v = j;
+        }
+    }
+</code></pre>
+<p>得到最大权值的坐标后，我们就要实现在该位置落子： 落完子后要对落子的位置进行统计，如果达到赢的情况就终止游戏，否则把落子权交给鼠标。 </p>
+<pre><code class="javascript">    //当判断出最佳的落子点后,电脑开始落子,并且给落子点标记个2证明时白子
+    on(u,v,me);
+    canvasBoard[u][v] = 2;
+
+    //这里判断是否有五个子连成一线,和上面的判断大致一样
+    var b = setTimeout(() =&gt; {
+        for (let k = 0; k &lt; count; k++) {
+            if(wins[u][v][k]){
+                computer_win[k]++;
+                my_win[k] = 6;
+                if (computer_win[k] == 5) {
+                    on(u,v,me);
+                    over = true
+                    var a = setTimeout(() =&gt; {
+                        window.alert(&quot;you lose!!&quot;)
+                        clearTimeout(a);
+                    }, 30);
+                }
+            }
+        }
+        if(over == false){
+            me = true;
+        }
+        clearTimeout(b);
+    }, 10);
+</code></pre>
+<p>到这里，游戏基本上是大功告成了，还记得之前有个优化没做好吗，其实给它加上定时器就能完美解决这类问题了，至于具体的原理，那就要深入到宏队列微队列以及执行栈了，这里就不做细讲，感兴趣的朋友可以去百度上看看大牛们的见解，下面是全部的js代码：</p>
+<pre><code class="javascript">&lt;script&gt;
+    //获取地图画布
+    var canvas = document.querySelector(&quot;#map&quot;);
+    var map = canvas.getContext(&quot;2d&quot;);
+    map.strokeStyle = &quot;#111&quot;;
+
+
+    //刻画棋盘
+    function context(){
+        for (let i = 0; i &lt; 15; i++) {
+            //横线
+            map.moveTo(15,15+i*30);
+            map.lineTo(435,15+i*30);
+            map.stroke();
+            //竖线
+            map.moveTo(15+i*30,15);
+            map.lineTo(15+i*30,435);
+            map.stroke();
+        }
+    }
+
+    //增添背景图
+    var img = document.createElement(&quot;img&quot;);
+    img.src = &quot;./images/qipan.jpg&quot;;
+    img.onload = function(){
+        map.drawImage(img,0,0,450,450)
+        context();
+    }
+
+
+    //封装落子
+    function on(i,j,me){
+        map.beginPath();    //可以理解为棋子刻画开始
+        map.arc(        //用于创建圆或部分圆的方法
+            15+i*30,    //在map上的x轴的位置
+            15+j*30,    //为在map上的y轴的位置
+            13,         //13为圆的半径，也可以说是棋子的半径
+            0,          //0为开始弧度，画圆这里就入参0
+            2*Math.PI   ////PI为圆周率π，Math.PI = 3.14 = 180°  因为圆为360°，所以这里是2*Math.PI
+        );
+        map.closePath();    //可以理解为棋子刻画完毕
+
+        var chess = map.createRadialGradient(   //createRadialGradient()方法用来创建圆形渐变对象。
+            15+i*30+2,      //渐变的开始圆的 x 坐标
+            15+j*30-2,      //渐变的开始圆的 y 坐标
+            15,             //开始圆的半径
+            15+i*30,        //渐变的结束圆的 x 坐标
+            15+j*30,        //渐变的结束圆的 y 坐标
+            0               //结束圆的半径
+        );
+        if(me == true){  //轮到我的时候时白子
+            chess.addColorStop(0,&quot;#0A0A0A&quot;); //addColorStop()定义一个颜色的渐变
+            chess.addColorStop(1,&quot;#636766&quot;);
+        }else{   //其他时候时黑子
+            chess.addColorStop(0,&quot;#D1D1D1&quot;);
+            chess.addColorStop(1,&quot;#F9F9F9&quot;);
+        };
+        map.fillStyle = chess;  //fillStyle属性设置或返回用于填充绘画的颜色、渐变或模式
+        map.fill()  //fill()方法填充当前的图像
+    }
+
+    //判断落子点
+    var canvasBoard = [];
+    //判断谁落子
+    var me = true;
+    //判断结束游戏
+    var over = false;
+
+
+    //输赢统计数组
+    var my_win = [];
+    var computer_win = [];
+
+    //判断落子点
+    for(var i=0; i&lt;15; i++){
+        canvasBoard[i] = [];
+        for(var j=0; j&lt;15; j++){
+            canvasBoard[i][j] = 0;
+        }
+    }
+
+
+
+    //赢法数组 
+    var wins = [];
+    for(var i=0; i&lt;15; i++){
+        wins[i] = [];
+        for(var j=0; j&lt;15; j++){
+            wins[i][j] = [];
+        }
+    }
+
+
+
+    //统计所有可能的赢法
+    var count = 0;
+    //横线
+    for(var i = 0; i &lt; 15; i++){
+        for(var j= 0; j &lt; 11; j++){
+            for(var k = 0; k &lt; 5; k++){
+                wins[i][j+k][count] = true;
+            }
+            count++;
+        }
+    }
+    //竖线
+    for(var i = 0; i &lt; 15; i++){
+        for(var j= 0; j &lt; 11; j++){
+            for(var k = 0; k &lt; 5; k++){
+                wins[j+k][i][count] = true;
+            }
+            count++;
+        }
+    }
+    //正斜
+    for(var i = 0; i &lt; 11; i++){
+        for(var j= 0; j &lt; 11; j++){
+            for(var k = 0; k &lt; 5; k++){
+                wins[i+k][j+k][count] = true;
+            }
+            count++;
+        }
+    }
+    //反斜
+    for(var i = 0; i &lt; 11; i++){
+        for(var j= 14; j &gt; 3; j--){
+            for(var k = 0; k &lt; 5; k++){
+                wins[i+k][j-k][count] = true;
+            }
+            count++;
+        }
+    }
+    //console.log(count) 15*15的棋盘中有572中赢法
+
+
+    //输赢统计数组
+    for (let i = 0; i &lt; count; i++) {
+        my_win[i] = 0;
+        computer_win[i] = 0;
+    }
+
+
+    //我落子
+    canvas.onclick = function(e){
+        if(over == true){   //over为true时执行，这时候游戏已经结束了，所以return个空气出去 =。  =
+            return;
+        }
+        if(me == false){    //如果为!me，就是为false时，还没轮到我下棋，return个空气出去，让我动不了
+            return;
+        }
+        var x = e.offsetX;
+        var y = e.offsetY;
+        var i = parseInt(x/30);
+        var j = parseInt(y/30);
+        if(canvasBoard[i][j] == 0){  //为0时，证明这个位置是空的，是可以落子的
+            on(i,j,me);
+            canvasBoard[i][j] = 1;   //用1来表示我的落子
+
+            var a = setTimeout(() =&gt; {
+                for (let k = 0; k &lt; count; k++){    //遍历所有赢法
+                    if(wins[i][j][k]){  //如果我当前落子符合某个赢法
+                        my_win[k]++;    //计数器+1
+                        computer_win[k] = 6;    
+                        if ( my_win[k] == 5) {
+                            window.alert(&quot;you win!!&quot;)
+                            over = true;    //游戏结束
+                        }
+                    }
+                }
+                if(over == false){      //如果游戏没有结束
+                    me = false;     //me变成false 轮到切换到电脑来落子
+                    var b = setTimeout(() =&gt; {
+                        computerAI(); //然后调用电脑AI
+                        clearTimeout(b);
+                    }, 800);   
+                }
+                clearTimeout(a);
+            }, 30);
+        }
+    }
+
+
+    //接下来大概是最难IA落子
+
+    var computerAI = function(){
+        //积分设定
+        var myScroe = [];
+        var computerScore = [];
+        //落子的优先判定
+        var max = 0;
+        //电脑的落子坐标
+        var u = 0,v = 0;
+        //获得所有的格子,每个格子都有myScroe和computerScore且都为0用来给落子打分
+        for (let i = 0; i &lt; 15; i++) {
+            myScroe[i] = [];
+            computerScore[i] = [];
+            for (let j = 0; j &lt; 15; j++) {
+                myScroe[i][j] = 0;
+                computerScore[i][j] = 0;
+            }
+        }
+        //先获得每一个格子
+        for (let i = 0; i &lt; 15; i++){
+            for (let j = 0; j &lt; 15; j++){
+                //和人下棋一样,落子前得判定canvasBoard[i][j]为0,也就是没有任何棋子
+                if(canvasBoard[i][j] == 0){
+                    //遍历全部的赢法
+                    for (let k = 0; k &lt; count; k++){
+                        //如果当前的wins[i][j][k]存在,并且有子的时候
+                        if (wins[i][j][k]){
+                            //接下来就是具体给每个落子打分
+                            if (my_win[k] == 1){
+                                myScroe[i][j] += 200;
+                            }
+                            else if(my_win[k] == 2){
+                                myScroe[i][j] += 400;
+                            }
+                            else if(my_win[k] == 3){
+                                myScroe[i][j] += 2000;
+                            }
+                            else if(my_win[k] == 4){
+                                myScroe[i][j] += 10000;
+                            }
+
+                            //这里是给电脑落子打分
+                            if (computer_win[k] == 1){
+                                computerScore[i][j] += 300;
+                            }
+                            else if(computer_win[k] == 2){
+                                computerScore[i][j] += 600;
+                            }
+                            else if(computer_win[k] == 3){
+                                computerScore[i][j] += 4000;
+                            }
+                            else if(computer_win[k] == 4){
+                                computerScore[i][j] += 20000;
+                            }
+                        }    
+                    }
+                    //这段时用来判断落子的最佳处
+                    //人在某一部权值更高的情况
+                    if(myScroe[i][j] &gt; max){
+                        max = myScroe[i][j];
+                        u = i;
+                        v = j;
+                    }
+                    //权值已经到了最大的时候
+                    else if(myScroe[i][j] == max){
+                        //而i,j点的权值比在u,v点的更大时
+                        if(computerScore[i][j] &gt; computerScore[u][v]){
+                            u = i;
+                            v = j;
+                        }
+                    }
+                    //电脑在某一步权值更高时
+                    else if(computerScore[i][j] &gt; max){
+                        max = computerScore[i][j];
+                        u = i;
+                        v = j;
+                    }
+                    //当权值最大的时候
+                    else if(computerScore[i][j] == max){
+                        //如果人电脑在此处落子更有用
+                        if(myScroe[i][j] &gt; myScroe[u][v]){
+                            u = i;
+                            v = j;
+                        }
+                    }
+                }
+            }
+        }
+        //当判断出最佳的落子点后,电脑开始落子,并且给落子点标记个2证明时白子
+        on(u,v,me);
+        canvasBoard[u][v] = 2;
+
+        //这里判断是否有五个子连成一线,和上面的判断大致一样
+        var b = setTimeout(() =&gt; {
+            for (let k = 0; k &lt; count; k++) {
+                if(wins[u][v][k]){
+                    computer_win[k]++;
+                    my_win[k] = 6;
+                    if (computer_win[k] == 5) {
+                        on(u,v,me);
+                        over = true
+                        var a = setTimeout(() =&gt; {
+                            window.alert(&quot;you lose!!&quot;)
+                            clearTimeout(a);
+                        }, 30);
+                    }
+                }
+            }
+            if(over == false){
+                me = true;
+            }
+            clearTimeout(b);
+        }, 10);
+    }
+&lt;/script&gt;
+</code></pre>
+<p>至于要具体的源码的朋友，可以去我的博客下载，链接在上一个博客里面有</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2019/05/20/五子棋-UI篇/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                五子棋--UI篇</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src itemprop="image" alt height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 大老师<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@1.3.4/dist/Valine.min.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class>
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Hachiman_(:з)∠)_</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/honjun" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/图集/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/client/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+            客户端
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer" data-id="2480843339" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false" data-loop="all" data-order="random" data-preload="auto" data-volume="0.7" data-mutex="true" < div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script></div>
+</body>
+</html>
