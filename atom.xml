@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hikigayahachima.github.io/"/>
-  <updated>2019-05-20T12:28:16.092Z</updated>
+  <updated>2019-05-21T10:27:23.327Z</updated>
   <id>https://hikigayahachima.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hikigayahachima.github.io/2019/05/20/%E4%BA%94%E5%AD%90%E6%A3%8B-AI%E7%AF%87/"/>
     <id>https://hikigayahachima.github.io/2019/05/20/五子棋-AI篇/</id>
     <published>2019-05-20T06:00:32.000Z</published>
-    <updated>2019-05-20T12:28:16.092Z</updated>
+    <updated>2019-05-21T10:27:23.327Z</updated>
     
     <summary type="html">
     
@@ -35,8 +35,12 @@
     
     </summary>
     
+      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="(╯‵□′)╯︵┻━┻" scheme="https://hikigayahachima.github.io/tags/%E2%95%AF%E2%80%B5%E2%96%A1%E2%80%B2-%E2%95%AF%EF%B8%B5%E2%94%BB%E2%94%81%E2%94%BB/"/>
+    
+      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+      <category term="javaScript" scheme="https://hikigayahachima.github.io/tags/javaScript/"/>
     
   </entry>
   
@@ -45,7 +49,7 @@
     <link href="https://hikigayahachima.github.io/2019/05/20/%E4%BA%94%E5%AD%90%E6%A3%8B-UI%E7%AF%87/"/>
     <id>https://hikigayahachima.github.io/2019/05/20/五子棋-UI篇/</id>
     <published>2019-05-20T06:00:03.000Z</published>
-    <updated>2019-05-20T12:27:02.811Z</updated>
+    <updated>2019-05-21T10:27:18.452Z</updated>
     
     <summary type="html">
     
@@ -59,8 +63,36 @@
     
     </summary>
     
+      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="♪(^∇^*)" scheme="https://hikigayahachima.github.io/tags/%E2%99%AA-%E2%88%87/"/>
+    
+      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+      <category term="javaScript" scheme="https://hikigayahachima.github.io/tags/javaScript/"/>
+    
+      <category term="css" scheme="https://hikigayahachima.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-Theme-Sakura</title>
+    <link href="https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura/"/>
+    <id>https://hikigayahachima.github.io/2018/12/12/Hexo-Theme-Sakura/</id>
+    <published>2018-12-12T14:16:01.000Z</published>
+    <updated>2019-05-16T14:39:12.000Z</updated>
+    
+    <summary type="html">
+    
+      hexo-sakura主题使用教程
+    
+    </summary>
+    
+      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
+    
+      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
