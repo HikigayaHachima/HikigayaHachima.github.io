@@ -399,7 +399,7 @@
 <p>​    2）充填颜色，看起来更有立体感</p>
 <h1 id="一、正片区域"><a href="#一、正片区域" class="headerlink" title="一、正片区域"></a>一、正片区域</h1><h3 id="1-棋盘的页面结构"><a href="#1-棋盘的页面结构" class="headerlink" title="1.棋盘的页面结构"></a>1.棋盘的页面结构</h3><p>1）style样式</p>
 <p>​    棋盘给出了个阴影效果，box-shadow，看起来更美观</p>
-<pre><code class="javascript">*{
+<pre><code class="css">*{
     padding: 0px;
     margin: 0px;
 }
@@ -411,7 +411,7 @@
 </code></pre>
 <p>2）棋盘主体</p>
 <p>​    canvas  为h5中的标签，用来定义图形，比如图表和其他图像，具体的使用方法可参考W3C文档 </p>
-<pre><code class="javascript">&lt;canvas id=&quot;map&quot; width=&quot;450px&quot; height=&quot;450px&quot;&gt;&lt;/canvas&gt;
+<pre><code class="html">&lt;canvas id=&quot;map&quot; width=&quot;450px&quot; height=&quot;450px&quot;&gt;&lt;/canvas&gt;
 </code></pre>
 <p>​    完成之后我们的页面效果是这样的</p>
 <p><img src="https://i.loli.net/2019/05/20/5ce25989a669f85611.png" alt="1.png"></p>
@@ -566,7 +566,7 @@ canvas.onclick = function(e){
 <p>​    落子位置等于0才可以落子，落完子后给相应的点附非0值，黑子就附1，白子附2。 效果： </p>
 <p><img src="https://i.loli.net/2019/05/20/5ce259917854738566.png" alt="7.png"></p>
 <p>​    下面是UI篇全部的代码</p>
-<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+<pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
