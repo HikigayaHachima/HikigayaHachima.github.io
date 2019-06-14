@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: javaScript | 比起谷八幡</title>
+  <title itemprop="name">好玩的C3动画 | 比起谷八幡</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -356,130 +356,251 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="javaScript.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png);" src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      好玩的C3动画</h1>
+      <p class="entry-census">
+        <span>
+          <a href>
+            <img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href>HikigayaHachima</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-5-20<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">javaScript</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>​&emsp;&emsp;首先说c3动画，就必须提到animation 这个就相当于咱们写的background的一样，是一个c3新增的属性。这个就能写动画了。我想你们只要玩过游戏，一定知道“FPS”这个东西，这就是帧数。这个是动画的一个过程，电脑是根据帧，然后渲染得到的一个连续的动画。看一小段代码： </p>
+<pre><code class="css">/*
+    * animation-name                规定需要绑定到选择器的 keyframe 名称。。
+    * animation-duration            规定完成动画所花费的时间，以秒或毫秒计。
+    * animation-timing-function         规定动画的速度曲线。
+    * animation-delay                规定在动画开始之前的延迟。
+    * animation-iteration-count         规定动画应该播放的次数。
+    * animation-direction           规定是否应该轮流反向播放动画。
+*/
+</code></pre>
+<p>&emsp;&emsp;这里附上一个W3C链接地址，里面有各个属性的属性值。<a href="http://www.w3school.com.cn/cssref/pr_animation.asp" target="_blank" rel="noopener">点这里</a> </p>
+<p>​&emsp;&emsp;回到咱们上个问题，就是点击这个按钮的时候，需要将这个动画暂停，然后再次点击的时候开始这个动画。这个时候就需要用到一个叫做“animation-play-state”的属性了，他的属性值我们可以设置为“paused”。当然了实际的生产中，我们肯定是会给这个属性一个class类名的，然后通过控制这个class类名的添加和删除，来控制这个动画的暂停和开始。请看下面的一行css代码： </p>
+<pre><code class="css">.pause {
+    animation-play-state: paused;
+}
+</code></pre>
+<p>​&emsp;&emsp;按钮设计好了，接下来就是具体的css样式代码，废话不多，先上代码，我们再慢慢看：</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;css3 动画&lt;/title&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no&quot; /&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            @keyframes myfirst{
+                from {
+                    background: red;
+                    left: 0px;
+                    top: 40px;
+                    border-radius: 0;
+                    transform:rotate(0deg);
+                }
+                to {
+                    background: blue;
+                    left: 300px;
+                    top: 200px;
+                    border-radius: 50%;
+                    transform:rotate(360deg);
+                }
+            }
+            .dong{
+                animation: myfirst 2s linear 0s infinite alternate;    
+            }
+            /*
+             * animation-name    规定需要绑定到选择器的 keyframe 名称。。
+             * animation-duration    规定完成动画所花费的时间，以秒或毫秒计。
+             * animation-timing-function    规定动画的速度曲线。
+             * animation-delay    规定在动画开始之前的延迟。
+             * animation-iteration-count    规定动画应该播放的次数。
+             * animation-direction    规定是否应该轮流反向播放动画。
+             */
+            .pause {
+                animation-play-state: paused;
+            }
+            .big_box{
+                width: 100px;
+                height: 100px;
+                background: red;
+                text-align: center;
+                line-height: 100px;
+                position: absolute;
+                left: 0px;
+                top: 40px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;big_box&quot;&gt;一个盒子&lt;/div&gt;
+        &lt;button class=&quot;button1&quot;&gt;开始&lt;/button&gt;
+        &lt;button class=&quot;button2&quot;&gt;暂停&lt;/button&gt;        
+    &lt;/body&gt;
+    &lt;script src=&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        $(&quot;.button2&quot;).attr(&quot;disabled&quot;,true);
+        $(&quot;.button1&quot;).on(&quot;click.animation&quot;,function(){
+            //点击按钮添加class 为 dong
+            $(&quot;.big_box&quot;).addClass(&quot;dong&quot;);
+            $(&quot;.button2&quot;).attr(&quot;disabled&quot;,false);
+        })
+        $(&quot;.button2&quot;).on(&quot;click.pause&quot;,function(){
+            //点击按钮删除pause类
+            $(&quot;.big_box&quot;).toggleClass(&quot;pause&quot;);
+        })
+
+    &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<p>&emsp;&emsp;我一直觉得，c3的<code>animation</code>动画和js的函数很相像，都需要先声明动画，然后再调用动画。比如上面这个，我们需要通过关键帧<code>@keyframes</code>来创建一个动画区域，里面录入了动画各个阶段索要改变的属性和改变的值，然后通过<code>animation</code>来调用这个动画。</p>
+<p>&emsp;&emsp;c3动画不仅能改变内容的各种宽高，边角，旋转等样式，它还可以渐变颜色，就像上面，我只用在开始写个red，在结尾写个blue，就可以简单的实现红色到蓝色的渐变，这点是js完全做不到的。</p>
+<p>&emsp;&emsp;现代浏览器在使用CSS3动画时，以下四种情形绘制的效率较高，分别是： </p>
+<ul>
+<li>改变位置 </li>
+<li>改变大小 </li>
+<li>旋转 </li>
+<li>改变透明度 </li>
+</ul>
+<p>&emsp;&emsp;咳咳~上面说了c3动画的那么多好处，那他到底有哪些不足的地方？</p>
+<h3 id="1）性能差距"><a href="#1）性能差距" class="headerlink" title="1）性能差距"></a>1）性能差距</h3><p>​&emsp;&emsp;既然说到性能那肯定又要说道浏览器的重绘，回流还有重布局。这样就很麻烦了，而且动画不只有css的动画，jquery也提供了一套动画。JS动画和CSS3动画的比较</p>
+<p>我们经常面临一个抉择：是使用JavaScript的动画还是使用CSS的动画，下面将对比一下这两种方式</p>
+<h5 id="JS动画"><a href="#JS动画" class="headerlink" title="JS动画"></a>JS动画</h5><p>缺点：JavaScript在浏览器的主线程中运行，而其中还有很多其他需要运行的JavaScript、样式计算、布局、绘制等对其干扰。这也就导致了线程可能出现阻塞，从而造成丢帧的情况。</p>
+<p>优点：JavaScript的动画与CSS预先定义好的动画不同，可以在其动画过程中对其进行控制：开始、暂停、回放、中止、取消都是可以做到的。而且一些动画效果，比如视差滚动效果，只有JavaScript能够完成</p>
+<h5 id="CSS动画"><a href="#CSS动画" class="headerlink" title="CSS动画"></a>CSS动画</h5><p>缺点：缺乏强大的控制能力。而且很难以有意义的方式结合到一起，使得动画变得复杂且易于出问题。 </p>
+<p>优点：浏览器可以对动画进行优化。它必要时可以创建图层，然后在主线程之外运行。</p>
+<h3 id="2）兼容性差距"><a href="#2）兼容性差距" class="headerlink" title="2）兼容性差距"></a>2）兼容性差距</h3><p>css3的动画属性兼容性还是比较好的，大部分的浏览器都能运行，但是肯定没有js动画兼容性高，这毋庸置疑，所以在写css3动画时尽量使用比较常用的属性</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>&emsp;&emsp;动画给予了页面丰富的视觉体验。我们应该尽力避免使用会触发重布局和重绘的属性，以免失帧。最好提前申明动画，这样能让浏览器提前对动画进行优化。由于GPU的参与，现在用来做动画的最好属性是如下几个：</p>
+<ul>
+<li>opacity</li>
+<li>translate</li>
+<li>rotate</li>
+<li>scale</li>
+</ul>
+<p>&emsp;&emsp;最后给两个我认为写的不错的性能差距的文章，提供给有需要的朋友。<a href="https://www.cnblogs.com/langzi1989/p/5965818.html" target="_blank" rel="noopener">点这里</a>，<a href="https://www.w3cplus.com/animation/animation-performance.html" target="_blank" rel="noopener">还有这一个</a> </p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/05/20/五子棋-AI篇/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                五子棋--AI篇</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/05/20/五子棋-UI篇/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                五子棋--UI篇</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/05/20/五子棋-AI篇/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/05/20/五子棋-AI篇/">
-    五子棋--AI篇</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-5-20</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/05/20/五子棋-AI篇/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/05/20/好玩的C3动画/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/05/20/好玩的C3动画/">
-    好玩的C3动画</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-5-20</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/05/20/好玩的C3动画/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/05/20/五子棋-UI篇/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/05/20/五子棋-UI篇/">
-    五子棋--UI篇</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-5-20</div>
-    <p>
-    </p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/05/20/五子棋-UI篇/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="HikigayaHachima" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author">HikigayaHachima</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
