@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a: 2018/12 | 比起谷八幡</title>
+  <title itemprop="name">3D动画的理解 | 比起谷八幡</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -356,146 +356,327 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 75px;">
-</div>
-<div id="content" class="site-content">
-  <div id="main">
-    <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png);" src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      3D动画的理解</h1>
+      <p class="entry-census">
+        <span>
+          <a href>
+            <img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg">
+          </a>
+        </span>
+        <span>
+          <a href>HikigayaHachima</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-6-15<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:right;">
-                [<span id="al_expand_collapse" style="cursor: s-resize;">
-                全部展开/收缩</span>
-              ]</p>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2019年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      06月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style>
-              
-                      <li>
-                        <a href="/2019/06/15/3D动画的理解/">
-                          <span style="color:#0bf;">
-                          15日09:25:34</span>
-                          3D动画的理解
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      05月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style>
-              
-                      <li>
-                        <a href="/2019/05/20/好玩的C3动画/">
-                          <span style="color:#0bf;">
-                          20日14:00:32</span>
-                          好玩的C3动画
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2019/05/20/五子棋-AI篇/">
-                          <span style="color:#0bf;">
-                          20日14:00:32</span>
-                          五子棋--AI篇
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2019/05/20/五子棋-UI篇/">
-                          <span style="color:#0bf;">
-                          20日14:00:03</span>
-                          五子棋--UI篇
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2018年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style>
-              
-                      <li>
-                        <a href="/2018/12/12/Hexo-Theme-Sakura/">
-                          <span style="color:#0bf;">
-                          12日22:16:01</span>
-                          Hexo-Theme-Sakura
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>&emsp;&emsp;css3是一个很有意思的改革，他在我们原有网页的2D基础上，通过<code>perspective: 距离;</code>的方法添加一个视觉景深效果，让2D的平面变得有3D的视觉效果，通过<code>transform-style: preserve-3d;</code>的方法来实现页面的3D布局，我先上这两种类型的代码实现效果之间的区别，再慢慢讲解：</p>
+<h2 id="perspective-距离"><a href="#perspective-距离" class="headerlink" title="perspective: 距离;"></a><code>perspective: 距离;</code></h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        #box{                                        
+            margin: 100px auto 0 auto;                
+            padding: 0px;                                
+            height: 187px;                                 
+            width: 216px;                                
+            position: relative;                        
+            perspective:1000px;
+        }
+        #pic,#text{
+            width: 216px;
+            height: 187px;
+        }
+        #pic{
+            position: absolute;
+            background: url(https://i.loli.net/2019/06/15/5d0455dca316f22967.jpg);            
+            transition:0.5s;                            
+        }                                               
+        #box:hover #text{                              
+            transform:rotateY(0deg);                    
+        }
+        #box:hover #pic{
+            transform:rotateY(-90deg);                 
+        }                                                
+        #text{
+            background-color: rgba(0,0,0,0.7);
+            text-align: center;
+            line-height: 187px;                            
+            position: absolute;                        
+            transform:rotateY(90deg);                
+            transition:0.5s;
+        }
+&lt;/style&gt;                                    
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;box&quot;&gt;
+        &lt;div id=&quot;pic&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;text&quot;&gt;&lt;a href=&quot;&quot;&gt;
+            你给俺等着，哼哼~
+        &lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="transform-style-preserve-3d"><a href="#transform-style-preserve-3d" class="headerlink" title="transform-style: preserve-3d;"></a><code>transform-style: preserve-3d;</code></h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+
+    &lt;style&gt;
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .content{
+            height: 200px;
+            background-color: #63B8FF;
+            margin-top: 200px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+            transform:rotateY(45deg) rotateX(45deg);
+            transform-style: preserve-3d;
+            animation:xuanzhuan 10s infinite alternate;
+        }
+        .box div{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            line-height: 200px;
+            text-align: center;
+            font-size: 30px;
+            transition: transform 0.3s;
+        }
+        .box .box_fornt{
+            background-color: rgba(154,50,205,0.7);
+            transform:rotateY(0deg) translateZ(100px);
+
+        }
+        .box .box_back{
+            background-color: rgba(238,58,140,0.7);
+            transform:rotateY(0deg) translateZ(-100px);
+        }
+        .box .box_left{
+            background-color: rgba(122,103,238,0.7);
+            transform:rotateY(90deg) translateZ(-100px);
+        }
+        .box .box_right{
+            background-color: rgba(255,69,0,0.7);
+            transform:rotateY(90deg) translateZ(100px);
+        }
+        .box .box_top{
+            background-color: rgba(255,165,0,0.7);
+            transform:rotateX(90deg) translateZ(100px);
+        }
+        .box .box_bottom{
+            background-color: rgba(0,255,127,0.7);
+            transform:rotateX(90deg) translateZ(-100px);
+        }
+        /* inner box */
+        .box i{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .box .inner_fornt{
+            background-color: rgba(154,50,205,0.7);
+            transform:rotateY(0deg) translateZ(50px);
+
+        }
+        .box .inner_back{
+            background-color: rgba(238,58,140,0.7);
+            transform:rotateY(0deg) translateZ(-50px);
+        }
+        .box .inner_left{
+            background-color: rgba(122,103,238,0.7);
+            transform:rotateY(90deg) translateZ(-50px);
+        }
+        .box .inner_right{
+            background-color: rgba(255,69,0,0.7);
+            transform:rotateY(90deg) translateZ(50px);
+        }
+        .box .inner_top{
+            background-color: rgba(255,165,0,0.7);
+            transform:rotateX(90deg) translateZ(50px);
+        }
+        .box .inner_bottom{
+            background-color: rgba(0,255,127,0.7);
+            transform:rotateX(90deg) translateZ(-50px);
+        }
+        /* hover box */
+        .box:hover .box_fornt{
+            transform:rotateY(0deg) translateZ(200px);
+        }
+        .box:hover .box_back{
+            transform:rotateY(0deg) translateZ(-200px);
+        }
+        .box:hover .box_left{
+            transform:rotateY(90deg) translateZ(-200px);
+        }
+        .box:hover .box_right{
+            transform:rotateY(90deg) translateZ(200px);
+        }
+        .box:hover .box_top{
+            transform:rotateX(90deg) translateZ(200px);
+        }
+        .box:hover .box_bottom{
+            transform:rotateX(90deg) translateZ(-200px);
+        }
+
+        @keyframes xuanzhuan{
+            from{
+                transform:rotateY(0deg) rotateX(0deg)
+            }
+            to{
+                transform:rotateY(360deg) rotateX(360deg)
+            }
+        }
+    &lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;div class=&quot;box_fornt&quot;&gt;正面&lt;/div&gt;
+            &lt;div class=&quot;box_back&quot;&gt;背面&lt;/div&gt;
+            &lt;div class=&quot;box_left&quot;&gt;左面&lt;/div&gt;
+            &lt;div class=&quot;box_right&quot;&gt;右面&lt;/div&gt;
+            &lt;div class=&quot;box_top&quot;&gt;上面&lt;/div&gt;
+            &lt;div class=&quot;box_bottom&quot;&gt;下面&lt;/div&gt;
+            &lt;i class=&quot;inner_fornt&quot;&gt;正面&lt;/i&gt;
+            &lt;i class=&quot;inner_back&quot;&gt;背面&lt;/i&gt;
+            &lt;i class=&quot;inner_left&quot;&gt;左面&lt;/i&gt;
+            &lt;i class=&quot;inner_right&quot;&gt;右面&lt;/i&gt;
+            &lt;i class=&quot;inner_top&quot;&gt;上面&lt;/i&gt;
+            &lt;i class=&quot;inner_bottom&quot;&gt;下面&lt;/i&gt;
+        &lt;/div&gt;    
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>&emsp;&emsp;这两个属性的最大区别，在于</p>
+<p>&emsp;&emsp;<code>perspective</code>是给物体一个视角，但是物体本事还是2D的东西，就好比一张纸的翻转，你会看到越靠近的越大，越远的越小，它的本质并不是3D布局，顶多算是伪3D。就如上述代码中，我们设置了<code>perspective:1000px;</code>看到的效果是有一种3D的感觉，但它却不能实现多个面拼接成真实的3D模型</p>
+<p>&emsp;&emsp;<code>transform-style: preserve-3d;</code>是真正的，赋予页面3D布局能力的属性，只要声明了这个属性，页面的布局就可以用拼接的方法，实现立体的效果，比如上述代码的正方体，就是用6个面，在3D布局的页面上拼接而成，先让正方形重叠在一起，通过<code>transform:rotateY(旋转角度) translateZ(平移距离);</code>来实现6个面的拼接</p>
+<p>&emsp;&emsp;在2d转换模块中我们研究了rotateX()和rotateY()方法，就是绕x轴和y轴旋转，这其实就是3d模块的一种表现，当然要看到近大远小的3d效果，还需要在父元素上添加透视属性：<code>perspective:1000px;</code>值为透视点到元素的距离，但是，你会发现当父元素转到90度的时候元素消失了，这就说明元素是没有厚度的。说明元素虽然具有了近大远小的透视属性，但本质上仍是2d的。你需要添加<code>transform-style:preserve-3d;</code>样式来让元素在3d空间中转换。这样，元素就处在了3维的空间里，当父元素旋转90度，仍能看到里面的子元素。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
           </div>
         </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
       </article>
-    </div>
-  </div>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2019/05/20/好玩的C3动画/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/HikigayaHachima/cdn@2.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                好玩的C3动画</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="HikigayaHachima" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author">HikigayaHachima</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">

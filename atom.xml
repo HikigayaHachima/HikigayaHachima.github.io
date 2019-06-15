@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hikigayahachima.github.io/"/>
-  <updated>2019-05-21T10:27:23.327Z</updated>
+  <updated>2019-06-15T03:19:53.303Z</updated>
   <id>https://hikigayahachima.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>五子棋--AI篇</title>
-    <link href="https://hikigayahachima.github.io/2019/05/20/%E4%BA%94%E5%AD%90%E6%A3%8B-AI%E7%AF%87/"/>
-    <id>https://hikigayahachima.github.io/2019/05/20/五子棋-AI篇/</id>
-    <published>2019-05-20T06:00:32.000Z</published>
-    <updated>2019-05-21T10:27:23.327Z</updated>
+    <title>3D动画的理解</title>
+    <link href="https://hikigayahachima.github.io/2019/06/15/3D%E5%8A%A8%E7%94%BB%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>https://hikigayahachima.github.io/2019/06/15/3D动画的理解/</id>
+    <published>2019-06-15T01:25:34.000Z</published>
+    <updated>2019-06-15T03:19:53.303Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;&amp;emsp;&amp;emsp;css3是一个很有意思的改革，他在我们原有网页的2D基础上，通过&lt;code&gt;perspective: 距离;&lt;/code&gt;的方法添加一个视觉景深效果，让2D的平面变得有3D的视觉效果，通过&lt;code&gt;transform-style:
         
       
     
@@ -38,9 +38,9 @@
       <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
       <category term="javaScript" scheme="https://hikigayahachima.github.io/tags/javaScript/"/>
+    
+      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
@@ -66,9 +66,37 @@
       <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
+      <category term="javaScript" scheme="https://hikigayahachima.github.io/tags/javaScript/"/>
+    
       <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
     
+  </entry>
+  
+  <entry>
+    <title>五子棋--AI篇</title>
+    <link href="https://hikigayahachima.github.io/2019/05/20/%E4%BA%94%E5%AD%90%E6%A3%8B-AI%E7%AF%87/"/>
+    <id>https://hikigayahachima.github.io/2019/05/20/五子棋-AI篇/</id>
+    <published>2019-05-20T06:00:32.000Z</published>
+    <updated>2019-06-14T10:39:46.869Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
       <category term="javaScript" scheme="https://hikigayahachima.github.io/tags/javaScript/"/>
+    
+      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
@@ -94,9 +122,9 @@
       <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
-    
       <category term="javaScript" scheme="https://hikigayahachima.github.io/tags/javaScript/"/>
+    
+      <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
     
       <category term="css" scheme="https://hikigayahachima.github.io/tags/css/"/>
     
@@ -118,9 +146,9 @@
       <category term="技术" scheme="https://hikigayahachima.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
-    
       <category term="悦读" scheme="https://hikigayahachima.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+      <category term="web" scheme="https://hikigayahachima.github.io/tags/web/"/>
     
   </entry>
   
